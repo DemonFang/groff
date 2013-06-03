@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Groff by Distrotech</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Groff</h1>
+          <h2>Import Groff http://www.gnu.org/software/groff/</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/Distrotech/groff/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/Distrotech/groff/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/Distrotech/groff" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <pre><code>Copyright (C) 1989-2000, 2001, 2002, 2003, 2004, 2005, 2006, 2008,
+              2009
+  Free Software Foundation, Inc.
+
+Copying and distribution of this file, with or without modification,
+are permitted in any medium without royalty provided the copyright
+notice and this notice are preserved.
+</code></pre>
+
+<p>This is the GNU `groff' document formatting system.  The version
+number is given in the file VERSION.</p>
+
+<p>Included in this release are implementations of <code>troff',</code>pic', <code>eqn',
+</code>tbl', <code>grn',</code>refer', <code>-man',</code>-mdoc', <code>-mom', and</code>-ms' macros, and
+drivers for <code>PostScript',</code>TeX dvi' format, <code>HP LaserJet 4' printers,
+</code>Canon CAPSL' printers, <code>HTML' and</code>XHTML' formats (beta status), and
+typewriter-like devices.  Also included is a modified version of the
+Berkeley <code>-me' macros, the enhanced version</code>gxditview' of the X11
+<code>xditview' previewer, and an implementation of the</code>-mm' macros
+contributed by Joergen Haegg (<a href="mailto:jh@axis.se">jh@axis.se</a>).</p>
+
+<p>See the file `INSTALL' for installation instructions.  You require
+a C++ compiler.</p>
+
+<p>The file <code>NEWS' describes recent user-visible changes to</code>groff'.</p>
+
+<p><code>groff' is free software.  See the file</code>COPYING' for copying
+permission.</p>
+
+<p>The file <code>PROBLEMS' describes various problems that have been
+encountered in compiling, installing, and running</code>groff'.</p>
+
+<p>The file `MORE.STUFF' contains information about add-on packages
+useful for groff.</p>
+
+<p>The most recent released version of <code>groff' is always available by
+anonymous ftp from</code>ftp.gnu.org' in the directory `gnu/groff'.</p>
+
+<p>The current development version of <code>groff' is available from a</code>CVS'
+repository.  You can access it by first selecting a parent directory
+in which to create a working copy (call it, say, `~/cvswork'), and
+then executing the commands</p>
+
+<p>cd ~/cvswork
+  cvs -d:pserver:<a href="mailto:anonymous@cvs.savannah.gnu.org">anonymous@cvs.savannah.gnu.org</a>/sources/groff -z5 co groff</p>
+
+<p>This creates a subdirectory, <code>~/cvswork/groff', with a</code>checked
+out' copy of the `CVS' repository.  An update of this working copy may
+be achieved, at any later time by invoking the commands</p>
+
+<p>cd ~/cvswork/groff
+  cvs -z5 update -dP</p>
+
+<p>Please read the `CVS' info pages for further details.</p>
+
+<p>Finally, it is possible to access the `CVS' with a web browser by
+pointing it to</p>
+
+<p><a href="http://savannah.gnu.org/cvs/?group=groff">http://savannah.gnu.org/cvs/?group=groff</a></p>
+
+<p>Alternatively, you can download snapshots (which are updated twice a day).
+The complete `groff' source as a single file is available at</p>
+
+<p><a href="http://groff.ffii.org/groff/devel/groff-current.tar.gz">http://groff.ffii.org/groff/devel/groff-current.tar.gz</a></p>
+
+<p>A diff file relative to <code>groff-&lt;version&gt;', the latest official</code>groff'
+release is available at</p>
+
+<p><a href="http://groff.ffii.org/groff/devel/groff-">http://groff.ffii.org/groff/devel/groff-</a>-current.diff.gz</p>
+
+<p>Assuming that <code>groff-&lt;version&gt;.tar.gz' and
+</code>groff--current.diff.gz' are in the same directory, do the
+following to apply the diff file:</p>
+
+<p>tar xzvf groff-.tar.gz
+  cd groff-
+  gunzip -c ../groff--current.diff.gz | patch -p1</p>
+
+<p>Depending on your requirements, you may need at least some of the
+following tools to build `groff' directly from its source:</p>
+
+<p>ghostscript
+  the psutils package
+  the netpbm package
+  texinfo 4.8
+  bison &gt;= 1.875b or byacc</p>
+
+<p>Note that <code>texinfo' and</code>bison' or <code>byacc' are required only for
+building from</code>CVS' sources (either a checked out working copy, or a
+daily snapshot).  They are not required for building from a stable
+release tarball.  Also note that the version numbers stated are the
+minimum supported.  No version of <code>texinfo' &lt; 4.8 works, and the
+original release of</code>bison' 1.875 is known not to work; you <em>may</em> find
+that `bison' releases &lt; 1.875 work, but in case of difficulty,
+please update to a later version <em>before</em> posting a bug report.</p>
+
+<p>For <em>all</em> sources, you need ghostscript for creation of either <code>PDF' or
+</code>HTML' output; the <code>netpbm' and</code>psutils' packages are required only for
+`HTML' output.  If you don't intend to produce output in either of these
+formats, then these packages are unnecessary.</p>
+
+<p>In Linux Debian, the installation of <code>texinfo' is dangerous.  For it
+creates a file</code>install-info' that blocks the system installation.
+So the created `/usr/local/bin/install-info' must be renamed.</p>
+
+<p>The <code>groff' configure script searches for the X11 headers and
+libraries</code>Xaw' and <code>Xmu'.  So the corresponding developer packages of
+your system must be installed, otherwise</code>groff' does not install
+<code>gxditview' and the</code>-TX*' devices.  In Debian, the developer packages
+are <code>libxaw7-dev' and</code>libxmu-dev'.</p>
+
+<p>Please report bugs using the form in the file <code>BUG-REPORT'; the idea of
+this is to make sure that FSF has all the information it needs to fix
+the bug.  At the very least, read the</code>BUG-REPORT' form and make sure
+that you supply all the information that it asks for.  Even if you are
+not sure that something is a bug, report it using `BUG-REPORT': this
+enables us to determine whether it really is a bug or not.</p>
+
+<p>Three mailing lists are available:</p>
+
+<p><a href="mailto:bug-groff@gnu.org">bug-groff@gnu.org</a>          for reporting bugs
+  <a href="mailto:groff@gnu.org">groff@gnu.org</a>              for general discussion of groff
+  <a href="mailto:groff-commit@gnu.org">groff-commit@gnu.org</a>       a read-only list showing commitments
+                             to the CVS repository</p>
+
+<p>To subscribe, send a mail to -request@ (example:
+<a href="mailto:groff-request@gnu.org">groff-request@gnu.org</a> for the <code>groff' list) with the word</code>subscribe'
+in either the subject or body of the email (don't include the quotes).
+Alternatively, you may subscribe by visiting the web pages at</p>
+
+<p><a href="http://lists.gnu.org/mailman/listinfo/bug-groff">http://lists.gnu.org/mailman/listinfo/bug-groff</a>
+  <a href="http://lists.gnu.org/mailman/listinfo/groff">http://lists.gnu.org/mailman/listinfo/groff</a>
+  <a href="http://lists.gnu.org/mailman/listinfo/groff-commit">http://lists.gnu.org/mailman/listinfo/groff-commit</a></p>
+
+<p>Each of these web pages also provides a link to a browseable archive of
+postings to the corresponding mailing list.</p>
+
+<p>GNU `groff' was written by James Clark <a href="mailto:jjc@jclark.com">jjc@jclark.com</a>.  It is now
+maintained by Ted Harding <a href="mailto:ted.harding@nessie.mcc.ac.uk">ted.harding@nessie.mcc.ac.uk</a> and Werner
+Lemberg <a href="mailto:wl@gnu.org">wl@gnu.org</a>.</p>
+        </section>
+
+        <footer>
+          Groff is maintained by <a href="https://github.com/Distrotech">Distrotech</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
